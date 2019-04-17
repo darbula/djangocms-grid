@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import setup
 from djangocms_grid import __version__
 
 
 INSTALL_REQUIRES = [
-
+    'django>=1.6',
+    'django-cms>=3.0',
 ]
 
 CLASSIFIERS = [
@@ -30,7 +31,11 @@ setup(
     author='Divio AG',
     author_email='info@divio.ch',
     url='https://github.com/divio/djangocms-grid',
-    packages=find_packages(exclude=[]),
+    packages=[
+        'djangocms_grid',
+        'djangocms_grid.migrations',
+        'djangocms_grid.south_migrations'
+    ],
     install_requires=INSTALL_REQUIRES,
     license='LICENSE.txt',
     platforms=['OS Independent'],
